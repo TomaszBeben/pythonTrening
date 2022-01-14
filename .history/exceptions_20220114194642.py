@@ -1,3 +1,8 @@
+from ast import Str
+from dis import findlinestarts
+from tokenize import String
+
+
 x = 12
 y = 0
 
@@ -12,6 +17,6 @@ except (ZeroDivisionError, TypeError):
 except:
     print('kazdy inny błąd')
 finally:
-    print('finally wykonuje sie zawsze')
+    print('finally')
 
 print('...............')
