@@ -1,0 +1,53 @@
+
+TABLE OF CONTENTS
+What is UnicodeDecodeError ‘utf8’ codec can’t decode byte?
+Solution for Importing and Reading CSV files using Pandas
+Solution for Loading and Parsing JSON files
+Solution for Loading and Parsing any other file formats
+Solution for decoding the string contents efficiently
+The UnicodeDecodeError occurs mainly while importing and reading the CSV or JSON files in your Python code. If the provided file has some special characters, Python will throw an UnicodeDecodeError: ‘utf8’ codec can’t decode byte 0xa5 in position 0: invalid start byte.
+
+What is UnicodeDecodeError ‘utf8’ codec can’t decode byte?
+The UnicodeDecodeError normally happens when decoding a string from a certain coding. Since codings map only a limited number of str strings to Unicode characters, an illegal sequence of str characters (non-ASCII) will cause the coding-specific decode() to fail.
+
+When importing and reading a CSV file, Python tries to convert a byte-array (bytes which it assumes to be a utf-8-encoded string) to a Unicode string (str). It is a decoding process according to UTF-8 rules. When it tries this, it encounters a byte sequence that is not allowed in utf-8-encoded strings (namely this 0xff at position 0).
+
+Example
+
+import pandas as pd
+a = pd.read_csv("filename.csv")
+Output
+
+Traceback (most recent call last):
+ UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 in position 2: invalid start byte
+
+There are multiple solutions to resolve this issue, and it depends on the different use cases. Let’s look at the most common occurrences, and the solution to each of these use cases.
+
+Solution for Importing and Reading CSV files using Pandas
+If you are using pandas to import and read the CSV files, then you need to use the proper encoding type or set it to unicode_escape to resolve the UnicodeDecodeError as shown below.
+
+import pandas as pd
+data=pd.read_csv("C:\\Employess.csv",encoding=''unicode_escape')
+print(data.head())
+Solution for Loading and Parsing JSON files
+If you are getting UnicodeDecodeError while reading and parsing JSON file content, it means you are trying to parse the JSON file, which is not in UTF-8 format. Most likely, it might be encoded in ISO-8859-1. Hence try the following encoding while loading the JSON file, which should resolve the issue.
+
+json.loads(unicode(opener.open(...), "ISO-8859-1"))
+Solution for Loading and Parsing any other file formats
+In case of any other file formats such as logs, you could open the file in binary mode and then continue the file read operation. If you just specify only read mode, it opens the file and reads the file content as a string, and it doesn’t decode properly.
+
+You could do the same even for the CSV, log, txt, or excel files also.
+
+with open(path, 'rb') as f:
+  text = f.read()
+Alternatively, you can use decode() method on the file content and specify errors=’replace’ to resolve UnicodeDecodeError 
+
+with open(path, 'rb') as f:
+  text = f.read().decode(errors='replace')
+When you call .decode() an a unicode string, Python 2 tries to be helpful and decides to encode the Unicode string back to bytes (using the default encoding), so that you have something that you can really decode. This implicit encoding step doesn’t use errors='replace', so if there are any characters in the Unicode string that aren’t in the default encoding (probably ASCII) you’ll get a UnicodeEncodeError.
+
+(Python 3 no longer does this as it is terribly confusing.)
+
+Check the type of message and assuming it is indeed Unicode, works back from there to find where it was decoded (possibly implicitly) to replace that with the correct decoding.
+
+Solution for decoding the string contents efficiently

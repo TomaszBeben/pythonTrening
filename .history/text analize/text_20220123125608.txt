@@ -1,0 +1,14 @@
+Koronawirusy – gatunki wirusów, należących do podrodziny Coronavirinae z rodziny Coronaviridae w rzędzie Nidovirales.
+Podrodzina Coronavirinae podzielona została na cztery rodzaje:
+    alfa-(ang.),
+    beta-(ang.),
+    gamma-(ang.)
+    i deltakoronawirusy(ang.)
+    (łac. Alphacoronavirus, Betacoronavirus,
+    Gammacoronavirus i Deltacoronavirus).
+Nosicielami poszczególnych gatunków są ssaki lub ptaki[1][2].
+
+Koronawirusy posiadają osłonkę oraz pojedynczą nić RNA o symetrii helikalnej i polarności dodatniej.
+Rozmiar genomu znanych koronawirusów mieści się w zakresie od 26,4 do 31,7 knt[2], co jest wartością niezwykle dużą jak na wirusy RNA.
+Nazwa „koronawirus” wywodzi się z łac. corona oznaczającego koronę lub wieniec, ponieważ osłonki wirusów w mikroskopii elektronowej wydają się „ukoronowane” pierścieniem małych,
+przypominających żarówki struktur. Klasa Baltimore: IV.

@@ -4,3 +4,5 @@ co tam ?
 wszystko git
 to gityo
 yoyoy
+
+& C:/Users/Tomski/AppData/Local/Programs/Python/Python310/python.exe c:/Users/Tomski/Desktop/Python/textAnalize/main.py
