@@ -5,8 +5,6 @@ class Test:
         print('Nara')
 
 obj = Test()
-obj2 = obj
-
 del obj
 
 print('koniec')

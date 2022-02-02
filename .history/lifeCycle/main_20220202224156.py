@@ -6,7 +6,7 @@ class Test:
 
 obj = Test()
 obj2 = obj
-
 del obj
 
+print('koniec')
 print('koniec')
