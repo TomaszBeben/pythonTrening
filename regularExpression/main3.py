@@ -1,7 +1,7 @@
 # * - pozwala na wystapienie n razy przy zznaku przy ktorym sie znajduje(moze tez sie nie pojawic)
 # + - pozwala na wystapienie n razy przy zznaku przy ktorym sie znajduje(musi pojawic sie przynajmniej raz)
 # ? - pozwala na wystapienie znaku jeden raz lub zero razy
-# {2,4} - znak musi sie pojawic od... do...
+# {2,4} - znak musi sie pojawic od... do... razy
 
 import re
 
